@@ -27,6 +27,7 @@ then
     if [ $CURR_OUT == 0 ]
     then
         CURR_OUT=1
+        echo "$DEVICE_1"
         nircmd setdefaultsounddevice "$DEVICE_2" 1
     else
         CURR_OUT=0
@@ -47,7 +48,6 @@ then
 fi
 
 # Save new config
-echo "" > config.conf
-echo "DEVICE_1 = $DEVICE_1" >> config.conf
+echo "DEVICE_1 = $DEVICE_1" > config.conf
 echo "DEVICE_2 = $DEVICE_2" >> config.conf
 echo "CURR_OUT = $CURR_OUT" >> config.conf
